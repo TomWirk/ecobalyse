@@ -12,11 +12,11 @@ selection beaucoup plus large de produits.
 
 ##### Démarche
 
-###### Etape 1 : Scrapper l'API pour récupérer les listes de paramètres (ou les seuils) acceptables par l'API Ecobalyse
-###### Etape 2 : Envoyer plusieurs milliers de requêtes random à l'API pour constituer une bases de requêtes/réponses.
-###### Etape 3 : A partir de ces données, entraîner un modèle de machine learning, pour déterminer l'influence des divers paramètres (étapes de fabrication, matières, etc.) sur les variables cibles, les variables cibles étant les différents impats environnementaux d'un produit.
-###### Etape 4 : Utiliser l'IA générative pour générer une liste de produits non pris en charge par Ecobalyse, et fournir les étapes de fabrication associées.
-###### Etape 5 : Utiliser le modèle de machine learning sur ces nouveaux produits pour déterminer les 17 impacts environnementaux, et les 2 scores pondérés. Enrichir ainsi la base de données.
-###### Etape 6 : Déploiement du modèle (Docker, Airflow)
-###### Etape 7 : Interface graphique
-###### Etape 8 : Statistiques
+Etape 1 : Scrapper l'API pour récupérer les listes de paramètres (ou les seuils) acceptables par l'API Ecobalyse
+Etape 2 : Envoyer plusieurs milliers de requêtes random à l'API pour constituer une bases de requêtes/réponses.
+Etape 3 : A partir de ces données, entraîner un modèle de machine learning, pour déterminer l'influence des divers paramètres (étapes de fabrication, matières, etc.) sur les variables cibles, les variables cibles étant les différents impats environnementaux d'un produit.
+Etape 4 : Utiliser l'IA générative pour générer une liste de produits non pris en charge par Ecobalyse, et fournir les étapes de fabrication associées.
+Etape 5 : Utiliser le modèle de machine learning sur ces nouveaux produits pour déterminer les 17 impacts environnementaux, et les 2 scores pondérés. Enrichir ainsi la base de données.
+Etape 6 : Déploiement du modèle (Docker, Airflow)
+Etape 7 : Interface graphique
+Etape 8 : Statistiques
