@@ -22,3 +22,13 @@ Enrichir ainsi la base de données.
 Etape 6 : Déploiement du modèle (Docker, Airflow)   
 Etape 7 : Interface graphique  
 Etape 8 : Statistiques  
+
+##### Base de donnée
+
+Le schéma des données n'est pas systématiquement identique, certaines données sont obligatoires, d'autres non.  
+Les données reçues de l'API Ecobalyse sont reçues au format JSON.  
+Les contraintes d'une base de données relationnelles ne présentents pas ici d'intérêt. Les critères ACID ne sont pas requis.
+Le stockage document est celui nécessitant le moins de transformation, et présente une bonne performance en lecture.
+Nous avons donc opté pour une base de donnée MongoDB.
+
+
