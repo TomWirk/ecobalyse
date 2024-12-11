@@ -48,5 +48,5 @@ def generate_simulations(max_requests_per_minute):
 simulations = generate_simulations(60)
 
 # Sauvegarder les résultats dans un fichier JSON
-with open("simulations.json", "w") as f:
+with open("simulations.txt", "w") as f:
     json.dump(simulations, f, indent=4)
