@@ -93,6 +93,16 @@ def main():
     #with open("parameters.json", "w") as json_file:
     #    json.dump(parameters, json_file, indent=4)
 
+    combined_data = {
+        "countries": countries,
+        "materials": materials,
+        "products": products
+    }
+
+    with open("parameters.json", "w") as json_file:
+        json.dump(combined_data, json_file, indent=4)
+
+
     with open("schemas.json", "w") as json_file:
         json.dump(data, json_file, indent=4)
 
