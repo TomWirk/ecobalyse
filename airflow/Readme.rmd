@@ -1,0 +1,24 @@
+1. Create new Airflow docker image with installed Python requirements
+
+In the same folder you have 
+docker-compose.yaml 
+Dockerfile 
+requirements.txt 
+
+2. Build new Airflow image
+
+docker build . --tag pyrequire_airflow:2.10.3
+
+3. Use new image in your docker-compose.yaml
+
+image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.3.2}
+ Replace to 
+
+image: ${AIRFLOW_IMAGE_NAME:-pyrequire_airflow:2.10.3}
+
+
+4. Run Airflow
+
+docker-compose up airflow-init
+docker-compose up
+

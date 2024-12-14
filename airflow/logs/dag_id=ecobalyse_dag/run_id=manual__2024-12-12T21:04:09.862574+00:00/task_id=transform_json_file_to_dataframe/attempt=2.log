@@ -1,0 +1,217 @@
+[2024-12-12T21:05:16.380+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-12T21:05:16.496+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ecobalyse_dag.transform_json_file_to_dataframe manual__2024-12-12T21:04:09.862574+00:00 [queued]>
+[2024-12-12T21:05:16.504+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ecobalyse_dag.transform_json_file_to_dataframe manual__2024-12-12T21:04:09.862574+00:00 [queued]>
+[2024-12-12T21:05:16.504+0000] {taskinstance.py:2866} INFO - Starting attempt 2 of 3
+[2024-12-12T21:05:16.516+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): transform_json_file_to_dataframe> on 2024-12-12 21:04:09.862574+00:00
+[2024-12-12T21:05:16.523+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1126) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-12T21:05:16.523+0000] {standard_task_runner.py:72} INFO - Started process 1128 to run task
+[2024-12-12T21:05:16.525+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ecobalyse_dag', 'transform_json_file_to_dataframe', 'manual__2024-12-12T21:04:09.862574+00:00', '--job-id', '38', '--raw', '--subdir', 'DAGS_FOLDER/data_transformations.py', '--cfg-path', '/tmp/tmpusqy52fp']
+[2024-12-12T21:05:16.526+0000] {standard_task_runner.py:105} INFO - Job 38: Subtask transform_json_file_to_dataframe
+[2024-12-12T21:05:16.559+0000] {task_command.py:467} INFO - Running <TaskInstance: ecobalyse_dag.transform_json_file_to_dataframe manual__2024-12-12T21:04:09.862574+00:00 [running]> on host c67d6daee869
+[2024-12-12T21:05:16.630+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='thiernosidybah232@gmail.com' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ecobalyse_dag' AIRFLOW_CTX_TASK_ID='transform_json_file_to_dataframe' AIRFLOW_CTX_EXECUTION_DATE='2024-12-12T21:04:09.862574+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-12T21:04:09.862574+00:00'
+[2024-12-12T21:05:16.631+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-12-12T21:05:16.631+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-12-12T21:05:16.632+0000] {logging_mixin.py:190} INFO - Current task name:transform_json_file_to_dataframe state:running start_date:2024-12-12 21:05:16.496411+00:00
+[2024-12-12T21:05:16.632+0000] {logging_mixin.py:190} INFO - Dag name:ecobalyse_dag and current dag run status:running
+[2024-12-12T21:05:16.632+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-12T21:05:16.995+0000] {python.py:240} INFO - Done. Returned value was: {'impacts':            acd        cch         etf  ...        wtu          ecs          pef
+0     0.145715  24.225602  111.592737  ...   4.243234  3371.593189  2358.028274
+1     0.021158   2.742027    7.873200  ...   0.542432   306.325709   265.634710
+2     0.181251  20.854182   91.044543  ...   6.954623  2898.766484  2234.862138
+3     0.305665  32.175170  109.146844  ...  12.687058  3719.728891  3117.741446
+4     0.094097  12.514815   56.131237  ...   4.962141  1603.374028  1323.197677
+...        ...        ...         ...  ...        ...          ...          ...
+1995  0.013622   1.277167    8.489200  ...   1.080800   190.276460   165.354902
+1996  0.012454   2.119724    8.587306  ...   0.716912   266.010699   200.249170
+1997  0.037950   6.383826   20.201587  ...   1.603087   881.295206   717.411562
+1998  0.152916  20.192347  100.643630  ...   6.591835  3114.893849  1980.230076
+1999  0.191641  19.621334   76.992468  ...   4.805970  2634.072754  2124.628160
+
+[2000 rows x 21 columns], 'query':       airTransportRatio                         business  ... upcycled yarnSize
+0                  0.94     large-business-with-services  ...    False    59.71
+1                  0.34     large-business-with-services  ...    False   186.78
+2                  0.87     large-business-with-services  ...    False   133.62
+3                  0.51     large-business-with-services  ...    False   146.70
+4                  0.14  large-business-without-services  ...    False   168.66
+...                 ...                              ...  ...      ...      ...
+1995               0.64                   small-business  ...    False   144.93
+1996               0.22     large-business-with-services  ...    False    58.26
+1997               0.83                   small-business  ...    False    89.95
+1998               0.19  large-business-without-services  ...    False    96.85
+1999               0.29  large-business-without-services  ...    False   133.70
+
+[2000 rows x 20 columns]}
+[2024-12-12T21:05:17.071+0000] {xcom.py:690} ERROR - Object of type DataFrame is not JSON serializable. If you are using pickle instead of JSON for XCom, then you need to enable pickle support for XCom in your *** config or make sure to decorate your object with attr.
+[2024-12-12T21:05:17.072+0000] {taskinstance.py:3311} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 92, in default
+    return serialize(o)
+           ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/serialization/serde.py", line 149, in serialize
+    data, serialized_classname, version, is_serialized = _serializers[qn].serialize(o)
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/serialization/serializers/pandas.py", line 49, in serialize
+    table = pa.Table.from_pandas(o)
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/table.pxi", line 4751, in pyarrow.lib.Table.from_pandas
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/pandas_compat.py", line 625, in dataframe_to_arrays
+    arrays = [convert_column(c, f)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/pandas_compat.py", line 612, in convert_column
+    raise e
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/pandas_compat.py", line 606, in convert_column
+    result = pa.array(col, type=type_, from_pandas=True, safe=safe)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/array.pxi", line 360, in pyarrow.lib.array
+  File "pyarrow/array.pxi", line 87, in pyarrow.lib._ndarray_to_array
+  File "pyarrow/error.pxi", line 92, in pyarrow.lib.check_status
+pyarrow.lib.ArrowTypeError: ("Expected bytes, got a 'float' object", 'Conversion failed for column countrySpinning with type object')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 789, in _execute_task
+    task_instance.xcom_push(key=XCOM_RETURN_KEY, value=xcom_value, session=session_or_null)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3639, in xcom_push
+    XCom.set(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/api_internal/internal_api_call.py", line 166, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 249, in set
+    value = cls.serialize_value(
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 688, in serialize_value
+    return json.dumps(value, cls=XComEncoder).encode("UTF-8")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 105, in encode
+    return super().encode(o)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 94, in default
+    return super().default(o)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type DataFrame is not JSON serializable
+[2024-12-12T21:05:17.084+0000] {logging_mixin.py:190} INFO - Task instance in failure state
+[2024-12-12T21:05:17.084+0000] {logging_mixin.py:190} INFO - Task start:2024-12-12 21:05:16.496411+00:00 end:2024-12-12 21:05:17.083706+00:00 duration:0.587295
+[2024-12-12T21:05:17.084+0000] {logging_mixin.py:190} INFO - Task:<Task(PythonOperator): transform_json_file_to_dataframe> dag:<DAG: ecobalyse_dag> dagrun:<DagRun ecobalyse_dag @ 2024-12-12 21:04:09.862574+00:00: manual__2024-12-12T21:04:09.862574+00:00, state:running, queued_at: 2024-12-12 21:04:09.872154+00:00. externally triggered: True>
+[2024-12-12T21:05:17.084+0000] {logging_mixin.py:190} INFO - Failure caused by Object of type DataFrame is not JSON serializable
+[2024-12-12T21:05:17.084+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=ecobalyse_dag, task_id=transform_json_file_to_dataframe, run_id=manual__2024-12-12T21:04:09.862574+00:00, execution_date=20241212T210409, start_date=20241212T210516, end_date=20241212T210517
+[2024-12-12T21:05:17.096+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-12T21:05:17.096+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 38 for task transform_json_file_to_dataframe (Object of type DataFrame is not JSON serializable; 1128)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 92, in default
+    return serialize(o)
+           ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/serialization/serde.py", line 149, in serialize
+    data, serialized_classname, version, is_serialized = _serializers[qn].serialize(o)
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/serialization/serializers/pandas.py", line 49, in serialize
+    table = pa.Table.from_pandas(o)
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/table.pxi", line 4751, in pyarrow.lib.Table.from_pandas
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/pandas_compat.py", line 625, in dataframe_to_arrays
+    arrays = [convert_column(c, f)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/pandas_compat.py", line 612, in convert_column
+    raise e
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/pandas_compat.py", line 606, in convert_column
+    result = pa.array(col, type=type_, from_pandas=True, safe=safe)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/array.pxi", line 360, in pyarrow.lib.array
+  File "pyarrow/array.pxi", line 87, in pyarrow.lib._ndarray_to_array
+  File "pyarrow/error.pxi", line 92, in pyarrow.lib.check_status
+pyarrow.lib.ArrowTypeError: ("Expected bytes, got a 'float' object", 'Conversion failed for column countrySpinning with type object')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3005, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3159, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3183, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 789, in _execute_task
+    task_instance.xcom_push(key=XCOM_RETURN_KEY, value=xcom_value, session=session_or_null)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3639, in xcom_push
+    XCom.set(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/api_internal/internal_api_call.py", line 166, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 249, in set
+    value = cls.serialize_value(
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 688, in serialize_value
+    return json.dumps(value, cls=XComEncoder).encode("UTF-8")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 105, in encode
+    return super().encode(o)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 94, in default
+    return super().default(o)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type DataFrame is not JSON serializable
+[2024-12-12T21:05:17.139+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-12-12T21:05:17.160+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-12-12T21:05:17.162+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
